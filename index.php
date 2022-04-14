@@ -65,6 +65,7 @@ function add00($add){
     }elseif($add<100){
         $add = "0$add";
     }
+    return $add;
 };
 
 function randomImmat(){
@@ -73,15 +74,15 @@ function randomImmat(){
     
     $nb1=rand(1,999);
     $nb2=rand(1,999);
-    add00($nb1) ;
-    add00($nb2) ;
+
+ 
 
     for($i=0; $i<5; $i++){
         $alphaRand = rand(0,25);
        $letter .=  substr($alphabet, $alphaRand,1);
     }
 
-    $immat = $nb1. "-" . $letter . "-" . $nb2 ;
+    $immat = add00($nb1) ."-" . $letter . "-" . add00($nb2);
  
     return $immat;
 }
