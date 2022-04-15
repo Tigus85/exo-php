@@ -1,90 +1,32 @@
-<?php
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercice Php Nicolas </title>
+  <link rel="stylesheet" href="styles.css">
 
-function limitString(string $chaine, int $max){
+</head>
+<body>
 
-   return substr($chaine, 0,$max);
-   
-}
-
-echo limitString("Lorem ipsum dolor sit amet", 4);
-echo "<br>";
-// NIVEAU PLUS AVANCE !!! Attention
-
-
-$produits = [
-    [
-        "refProduit" => "Prod0001",
-        "prix_ht" => 1.87,
-        "tva"  => 5.5
-    ],
-    [
-        "refProduit" => "Prod0012",
-        "prix_ht" => 14.65,
-        "tva"  => 10
-    ],
-    [
-        "refProduit" => "Prod0002",
-        "prix_ht" => 1.87,
-        "tva"  => 5.5
-    ],
-    [
-        "refProduit" => "Prod0008",
-        "prix_ht" => 119,
-        "tva"  => 20
-    ]
-];
-// Créer une fonction qui nous sortira un tableau de valeurs
-// Le SEUL paramètre d'entrée doit être un tableau de produits (fourni ci-dessus)
-// la valeur retournée doit être sous la forme
-// [
-//   "REF_PRODUIT" => "PRIX_TTC",
-//   ...
-// ]
-// IMPORTANT : Le retour doit être fait en ordre alphabétique de la refProduit
-
-function productTTC(array $products){
-
-    foreach($products as $product){
-
-        $ttc = $product["prix_ht"] /100 *  $product["tva"] + $product["prix_ht"];
-
-        $retourner[$product["refProduit"] ] =  $ttc;
-
-    }
-    ksort($retourner);
-    return $retourner;
-
-}
-
-var_dump(productTTC($produits)) ;
-echo "<br>";
-
-function add00($add){
-    if($add<10){
-        $add = "00$add";
-    }elseif($add<100){
-        $add = "0$add";
-    }
-    return $add;
-};
-
-function randomImmat(){
-
-    $alphabet="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    
-    $nb1=rand(1,999);
-    $nb2=rand(1,999);
-
- 
-
-    for($i=0; $i<5; $i++){
-        $alphaRand = rand(0,25);
-       $letter .=  substr($alphabet, $alphaRand,1);
-    }
-
-    $immat = add00($nb1) ."-" . $letter . "-" . add00($nb2);
- 
-    return $immat;
-}
-
-echo randomImmat();
+<body>
+    <div class="text-center">
+        <h1>Nicolas SWIGON</h1>
+        <img src="https://avatars.githubusercontent.com/u/96616414?s=400&u=5eec18d637d94c9758cd5ad97add0fcf5aabf5b0&v=4">
+        <div>
+            <a href="13-04.php">Exercice du 13/04</a>
+        </div>
+        <div>
+          <a href="15-04.php">Exercice du 15/04  : 001 - On débute ! </a> 
+          <br>
+          <a href="https://tpdevweb2022.notion.site/001-On-d-bute-58a8b582576d4a758163317c15a25534"> Lien du Notion 001 - On débute ! </a>
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</body>
+  
+</body>
+</html>
